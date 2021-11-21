@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>Jeu du morpion</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+        <div id="content">
+
+            <div>
+                <h1>Le jeu du morpion</h1>
+            </div>
+
+            <div id="rules">
+                <h2>Règles du jeu : </h2>
+                <p>Soyez le premier à aligner trois cercles ou croix de manière horizontale, verticale ou diagonale.
+                Le joueur 1 utilisera le click gauche de la souris et le joueur 2 le click droit.</p>
+            </div>
+
+            <div id="case">
+                <main>
+
+                    <div id="line1">
+                        <div class="compartment caseW" ></div>
+                        <div class="compartment caseG" ></div>
+                        <div class="compartment caseW"></div>
+                    </div>
+
+                    <div id="line2">
+                        <div class="compartment caseG" ></div>
+                        <div class="compartment caseW"></div>
+                        <div class="compartment caseG" ></div>
+                    </div>
+
+                    <div id="line3">
+                        <div class="compartment caseW"></div>
+                        <div class="compartment caseG"></div>
+                        <div class="compartment caseW"></div>
+                    </div>
+
+                    </main>
+            </div>
+
+            <footer id="button">
+                <input type="submit" id="submit" value="Rejouer">
+            </footer>
+
+        </div>
+
+<script src="script.js"></script>
+</body>
+</html>

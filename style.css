@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 65.5%;
+}
+
+#content {
+    background-image: url("damier.png");
+    background-size:auto;
+    background-repeat: repeat;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: grey 2px 2px 2px;
+}
+
+#rules{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 2rem;
+    border: black 1px solid;
+    width: 80%;
+    background-color: white;
+    margin-left: 8rem;
+}
+
+#case {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+    border-radius: 1px;
+}
+
+#line1, #line2, #line3 {
+    display: flex;
+}
+
+
+.compartment {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+    height: 100px;
+    width: 100px;
+    border: black solid 2px;
+}
+
+.caseG {
+    background-color: #c5c4c4;
+}
+
+.caseW {
+    background-color: white;
+}
+
+#button {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
