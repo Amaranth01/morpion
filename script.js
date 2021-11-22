@@ -61,6 +61,8 @@ function horizontal (player) {
     return false;
 }
 
+//Victory Conditions
+
 function verticale (player) {
     for ( let i = 0 ; i < 3 ; i++ ) {
         if (compartment[i].innerHTML === player && compartment[3 + i].innerHTML === player && compartment[6 + i].innerHTML === player) {
@@ -101,4 +103,3 @@ document.getElementById("submit").addEventListener("click", function () {
     player2 = player1 = false; //playerO et playerX sont faux !
     document.getElementById("won").innerHTML = "";
 })
-
