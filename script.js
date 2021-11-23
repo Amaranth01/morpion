@@ -5,7 +5,9 @@ let player2 = false;
 const CLICK_LEFT = 0;
 const CLICK_RIGHT = 2;
 
-//Click management
+/*
+Click management
+ */
 
 for(const square of compartment) {
     square.addEventListener('mouseup', function(event) {
@@ -26,19 +28,24 @@ document.addEventListener('contextmenu', function (event){
     event.preventDefault();
 });
 
-//Management true or false
+/*
+Management true or false
+ */
 
 function checkCases() {
     player1 = horizontal("X");
     player2 = horizontal("O");
-    if(!player1 && !player2) {
+
+    if (!player1 && !player2) {
         player1 = verticale("X");
         player2 = verticale("O")
+
         if (!player1 && !player2) {
             player1 = diagonale("X");
             player2 = diagonale("O");
         }
     }
+
     if (player1) {
         alert ("Le joueur 1 remporte la manche");
     }
@@ -47,22 +54,24 @@ function checkCases() {
     }
 }
 
+/*
+Victory's Conditions
+ */
+
+//horizontal
 function horizontal (player) {
     for (let i=0; i < 3; i++) {
         if (compartment[i*3].innerHTML === player && compartment[1 + i*3].innerHTML === player && compartment[2+ i*3].innerHTML === player){
-            alert("Bravo");
             return true;
         }
         else if (compartment[i*3].innerHTML === player && compartment[1 + i*3].innerHTML === player && compartment[2+ i*3].innerHTML === player){
-            alert("BravOOO");
             return true;
         }
     }
     return false;
 }
 
-//Victory Conditions
-
+//Vertical
 function verticale (player) {
     for ( let i = 0 ; i < 3 ; i++ ) {
         if (compartment[i].innerHTML === player && compartment[3 + i].innerHTML === player && compartment[6 + i].innerHTML === player) {
@@ -76,6 +85,7 @@ function verticale (player) {
     return false;
 }
 
+//Diagonal
 function diagonale(player) {
     if (compartment[0].innerHTML === player && compartment[4].innerHTML === player && compartment[8].innerHTML === player) {
         return true;
@@ -94,12 +104,14 @@ function insertPlayerText(element, playerChar) {
     }
 }
 
-//button
+/*
+Button management
+ */
 
 document.getElementById("submit").addEventListener("click", function () {
     for (let square of compartment) {
         square.innerHTML = "";
     }
-    player2 = player1 = false; //playerO et playerX sont faux !
+    player2 = player1 = false;
     document.getElementById("won").innerHTML = "";
 })
