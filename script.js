@@ -1,32 +1,32 @@
 let compartment = document.getElementsByClassName('compartment');
 let player1 = false;
 let player2 = false;
-
-const CLICK_LEFT = 0;
-const CLICK_RIGHT = 2;
+let click_left = 0;
+let click_rigth = 2;
+let square;
 
 /*
 Click management
  */
 
-for(const square of compartment) {
-    square.addEventListener('mouseup', function(event) {
-        switch(event.button) {
-            case CLICK_LEFT:
-                insertPlayerText(this, "X");
-                break;
-
-            case CLICK_RIGHT:
-                insertPlayerText(this, "O")
-                break;
-        }
-        checkCases();
-    });
-}
-
 document.addEventListener('contextmenu', function (event){
     event.preventDefault();
 });
+
+for(square of compartment) {
+    square.addEventListener('mouseup', function(event) {
+        switch(event.button) {
+            case click_left:
+                insertPlayerText(this, "X");
+                break;
+
+            case click_rigth:
+                insertPlayerText(this, "O")
+                break;
+        }
+        return checkCases();
+    });
+}
 
 /*
 Management true or false
@@ -58,7 +58,7 @@ function checkCases() {
 Victory's Conditions
  */
 
-//horizontal
+//Horizontal
 function horizontal (player) {
     for (let i=0; i < 3; i++) {
         if (compartment[i*3].innerHTML === player && compartment[1 + i*3].innerHTML === player && compartment[2+ i*3].innerHTML === player){
